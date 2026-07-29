@@ -1,0 +1,140 @@
+! Title: Browser Game Portals Blocklist
+! Description: ~100 in-browser / casual gaming portals (friv-class). Excludes PC storefronts (Steam, EA, Epic, GOG, etc.)
+! Version: 2026.07.29
+! Expires: 7 days
+! Homepage: (local)
+! License: none
+!
+! Syntax: ||domain^  -> matches domain + all subdomains, any scheme/path. Works at
+!         AdGuard extension AND DNS layer (AdGuard Home / AdGuard DNS). No cosmetic
+!         rules used, so DNS-only deployment loses nothing.
+!
+! ============================================================================
+! TIER 1 - Casual HTML5 portals (friv-class; safe to apex-block)
+! ============================================================================
+||friv.com^
+||friv2online.com^
+||friv.land^
+||frivgames.com^
+||crazygames.com^
+||poki.com^
+||coolmathgames.com^
+||coolmath-games.com^
+||coolmath4kids.com^
+||y8.com^
+||kizi.com^
+||agame.com^
+||addictinggames.com^
+||kongregate.com^
+||armorgames.com^
+||miniclip.com^
+||silvergames.com^
+||gamesgames.com^
+||newgrounds.com^
+||lagged.com^
+||html5games.com^
+||games.com^
+||a10.com^
+||yepi.com^
+||juegos.com^
+||jogos.com.br^
+||girlsgogames.com^
+||girlgames.com^
+||dressupwho.com^
+||primarygames.com^
+||funbrain.com^
+||abcya.com^
+||mathplayground.com^
+||hoodamath.com^
+||mathsspot.com^
+||starsue.net^
+||kibagames.com^
+||plays.org^
+||gameflare.com^
+||onlinegames.io^
+||twoplayergames.org^
+||4j.com^
+||mathgames.com^
+||prodigygame.com^
+||itch.io^
+!
+! ============================================================================
+! AGGREGATOR / EMBED CDNs - HIGH LEVERAGE. Blocking these kills embedded games
+! across thousands of long-tail sites without listing each. Tradeoff: occasionally
+! breaks a non-game embed. Remove if you see false positives.
+! ============================================================================
+||gamedistribution.com^
+||gamemonetize.com^
+||gamepix.com^
+||famobi.com^
+!
+! ============================================================================
+! .io / real-time multiplayer cluster (mostly single-game domains)
+! ============================================================================
+||agar.io^
+||slither.io^
+||diep.io^
+||krunker.io^
+||shellshock.io^
+||skribbl.io^
+||zombs.io^
+||moomoo.io^
+||wings.io^
+||hole-io.com^
+||taming.io^
+||gats.io^
+||venge.io^
+||1v1.lol^
+||justbuild.lol^
+||smashkarts.io^
+||lolbeans.io^
+||deadshot.io^
+||territorial.io^
+||bloxd.io^
+||kirka.io^
+||narrow.one^
+||voxiom.io^
+||digdig.io^
+||littlebigsnake.com^
+||starve.io^
+||mope.io^
+||surviv.io^
+||defly.io^
+||wormate.io^
+||yohoho.io^
+||gulper.io^
+||evowars.io^
+||ev.io^
+||paper-io.com^
+!
+! ============================================================================
+! "Unblocked games" / school-proxy portals (apex-blockable subset only).
+! NOTE: this class rotates faster than any blocklist can track and mostly lives
+! on PaaS wildcards (github.io, *.netlify.app, *.vercel.app, *.pages.dev,
+! *.onrender.com, *.repl.co, sites.google.com, weebly, glitch.me) which you
+! CANNOT apex-block without massive collateral. Domain blocklisting is the wrong
+! control for this segment - see accompanying notes.
+! ============================================================================
+||unblockedgames66.com^
+||unblockedgames76.com^
+||unblockedgamesworld.com^
+||unblockedgames911.com^
+||tyronesunblockedgames.com^
+||classroom6x.com^
+||classroom0x.com^
+||geometryspot.com^
+||66ez.com^
+||retrobowl.me^
+!
+! ============================================================================
+! Cloud / board / UGC (borderline vs "friv-class" - prune to taste)
+! now.gg = cloud Android games in-browser; roblox = UGC platform;
+! chess/lichess = board games; scratch = educational (subdomain block only)
+! ============================================================================
+||now.gg^
+||roblox.com^
+||chess.com^
+||lichess.org^
+||2048game.com^
+||sudoku.com^
+||scratch.mit.edu^
